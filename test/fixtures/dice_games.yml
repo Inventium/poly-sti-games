@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  difficulty: MyString
+  num_die: 1
+  max_players: 1
+  odds: 1.5
+  dots_on_dice: 
+
+two:
+  name: MyString
+  difficulty: MyString
+  num_die: 1
+  max_players: 1
+  odds: 1.5
+  dots_on_dice: 

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  classification: MyString
+  legality: MyString
+  max_players: 1
+  projected_gain: 1.5
+
+two:
+  name: MyString
+  classification: MyString
+  legality: MyString
+  max_players: 1
+  projected_gain: 1.5
