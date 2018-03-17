@@ -1,13 +1,12 @@
 require "rails_helper"
 
 RSpec.describe BettingGame, :type => :model do
-  e = Election.create(name: "Election", classification: "National", legality: "Unclear", max_players: 300000000, projected_gain: 99)
-  lhr = HorseRace.create(name: "HorseRace", classification: "Local", legality: "Legal", max_players: 5000, projected_gain: 90)
-  rhr = HorseRace.create(name: "HorseRace", classification: "Regional", legality: "Depends", max_players: 50000, projected_gain: 70)
+  let!(:e)    { FactoryBot.create(:election) }
+  let!(:lhr)  { FactoryBot.create(:horse_race) }
+  let!(:rhr)  { FactoryBot.create(:horse_race, classification: "regional") }
+  let(:games) { BettingGame.all }
 
-  it '#all should return all betting games' do
-    games = BettingGame.all
-
+  it '#all should return all betting games using STI' do
     expect(games).to include(e)
     expect(games).to include(lhr)
     expect(games).to include(rhr)
