@@ -48,4 +48,14 @@ FactoryBot.define do
     odds 0.11
     dots_on_dice 12
   end
+
+  factory :casino do
+    name "Fox Woods"
+  end
+
+  factory :played_game do
+    casino
+    association :game, factory: :texas_hold_em
+    income 100
+  end
 end
