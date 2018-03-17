@@ -38,13 +38,6 @@ ActiveRecord::Schema.define(version: 20180317201238) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "casinos_games", id: false, force: :cascade do |t|
-    t.integer "casino_id", null: false
-    t.integer "game_id",   null: false
-    t.index ["casino_id", "game_id"], name: "index_casinos_games_on_casino_id_and_game_id"
-    t.index ["game_id", "casino_id"], name: "index_casinos_games_on_game_id_and_casino_id"
-  end
-
   create_table "dice_games", force: :cascade do |t|
     t.string   "name"
     t.string   "difficulty"
@@ -57,7 +50,6 @@ ActiveRecord::Schema.define(version: 20180317201238) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string   "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
