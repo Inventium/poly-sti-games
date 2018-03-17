@@ -1,6 +1,6 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe DiceGame, :type => :model do
+RSpec.describe DiceGame, type: :model do
   let!(:c)    { FactoryBot.create(:craps) }
   let!(:sb)   { FactoryBot.create(:sic_bo) }
   let(:games) { DiceGame.all }

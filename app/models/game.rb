@@ -1,3 +1,7 @@
 class Game < ApplicationRecord
-  has_and_belongs_to_many :casinos
+  def self.find_by_name(name:)
+    CardGame.find_by(name: name) ||
+      BettingGame.find_by(name: name) ||
+      DiceGame.find_by(name: name)
+  end
 end

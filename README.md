@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+```
+bundle install
+rake db:create && rake db:migrate && rake db:seed
+```
 
-Things you may want to cover:
+Run tests, with color!:
+`bundle exec rspec --format documentation --color`
 
-* Ruby version
 
-* System dependencies
+### Overview
+Use single table inheritance to create different types of Card, Betting and Dice Games
 
-* Configuration
+Use a polymorphic join table to handle the many-to-many relationship and attach a played instance of a game to a Casino
 
-* Database creation
+Please see casino.rb and associated specs for most of the implemented behavior!
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There is not much functionality we get from "Game", so Card, Betting and Dice Games do not subclass it.
