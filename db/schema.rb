@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316053109) do
+ActiveRecord::Schema.define(version: 20180317201238) do
 
   create_table "betting_games", force: :cascade do |t|
     t.string   "name"
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20180316053109) do
     t.string   "variant"
     t.integer  "deck_size"
     t.boolean  "rigged"
-    t.integer  "num_players"
+    t.integer  "max_players"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "casinos", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,8 +57,20 @@ ActiveRecord::Schema.define(version: 20180316053109) do
   end
 
   create_table "games", force: :cascade do |t|
+    t.string   "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "played_games", force: :cascade do |t|
+    t.integer  "casino_id"
+    t.integer  "game_id"
+    t.string   "game_type"
+    t.float    "income"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["casino_id", "game_id"], name: "index_played_games_on_casino_id_and_game_id"
+    t.index ["game_id", "casino_id"], name: "index_played_games_on_game_id_and_casino_id"
   end
 
 end

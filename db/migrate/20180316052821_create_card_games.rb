@@ -5,7 +5,7 @@ class CreateCardGames < ActiveRecord::Migration[5.0]
       t.string :variant
       t.integer :deck_size
       t.boolean :rigged
-      t.integer :num_players
+      t.integer :max_players
 
       t.timestamps
     end

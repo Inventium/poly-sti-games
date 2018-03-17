@@ -1,5 +1,5 @@
 class Casino < ApplicationRecord
-  has_and_belongs_to_many :games
+  has_many :played_games
 
-  validates :name
+  validates :name, presence: true
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  casino_id: 1
+  game_id: 1
+  game_type: MyString
+  income: 1.5
+
+two:
+  casino_id: 1
+  game_id: 1
+  game_type: MyString
+  income: 1.5
